@@ -1,0 +1,20 @@
+$blue: #044DC3;
+$gray: #707070; 
+$black: #000000;
+$green: #51B549;
+$white: #ffff;
+$lightgray: #555555;
+
+$thin: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 600;
+$semibold: 700;
+$extrabold: 900;
+
+@mixin item-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
