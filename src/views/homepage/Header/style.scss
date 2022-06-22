@@ -1,12 +1,13 @@
 @import '../../../variables.scss';
 
 .header {
-    width                : 100%;
+    @include container;
+    padding-right: 15px;
+    padding-left: 15px;
     display              : grid;
     grid-template-columns: 15% 65% 20%;
     align-items          : center;
-    padding-top          : 15px;
-    padding-bottom       : 15px;
+    padding-top          : 20px;
     &__logo {
         display: flex;
         justify-content: flex-start;
@@ -18,7 +19,7 @@
         align-items    : center;
         width: 872px;
 
-        .searcform {
+        .search-form {
             display        : flex;
             justify-content: center;
             align-items    : center;

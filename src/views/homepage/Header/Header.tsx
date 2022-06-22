@@ -15,7 +15,7 @@ const Header = () => {
         <img src={mainLogo} alt="logo" />
       </div>
       <div className='header__search'>
-        <form className="searcform" id="searchform">
+        <form className="search-form" id="searchform">
           <img src={searchicon} alt="search" />
           <input type="text" name="arama" className="search-input" placeholder="Ürün Ara" />
           <button className="search-btn">

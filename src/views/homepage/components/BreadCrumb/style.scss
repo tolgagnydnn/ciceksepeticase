@@ -1,0 +1,46 @@
+@import '../../../../variables.scss';
+
+.breadcrumb {
+    &__list {
+        list-style     : none;
+        display        : flex;
+        justify-content: flex-start;
+        align-items    : center;
+        padding        : 0;
+
+        .list-item {
+            font-size   : 13px;
+            padding-left: 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                .list-link {
+                    color: $green;
+                }
+            }
+
+            .list-link {
+                @include item-center;
+                text-decoration: none;
+                color          : $lightgray;
+
+            }
+
+            .arrow {
+                border      : solid $lightgray;
+                border-width: 0 1px 1px 0;
+                display     : inline-block;
+                padding     : 2px;
+            }
+
+            .right {
+                transform        : rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                margin-left      : 5px;
+            }
+        }
+    }
+}
