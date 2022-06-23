@@ -9,6 +9,7 @@ import activecategoryicon from '../../../assets/images/activecategory.png'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import Categories from '../components/Categories/Categories'
 import ProductCard from '../components/ProductCard/ProductCard'
+import DiscountCards from './components/DiscountCards'
 
 const Main = () => {
 
@@ -38,6 +39,9 @@ const Main = () => {
         </div>
         <div className='products-allproducts'>
             <ProductCard/>
+        </div>
+        <div className='main__discountcards'>
+            <DiscountCards/>
         </div>
       </div>
     </div>
