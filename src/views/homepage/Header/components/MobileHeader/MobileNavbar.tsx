@@ -9,7 +9,7 @@ const MobileNavbar = (props: any) => {
     const {openStatus, setOpenStatus} = props;
 
     return (
-        <div className={openStatus ? 'navbar-menu' : 'navbar-menu close'}>
+        <div className={openStatus ? 'navbar-menu' : 'navbar-menu close-menu'}>
             <div className='menu-logo'>
                 <img src={mainLogo} alt="logo" />
             </div>

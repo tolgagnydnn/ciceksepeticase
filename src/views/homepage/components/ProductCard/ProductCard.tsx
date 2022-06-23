@@ -10,7 +10,7 @@ const ProductCard = () => {
     <>
       {
         allProducts?.map((product: any) => (
-          <div className='product'>
+          <div className='product' key={product.id}>
             <div className='product-images'>
               <img src={product.image} alt='productimage' />
             </div>

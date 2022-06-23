@@ -65,6 +65,15 @@
     }
 
     &__navbar {
+        .navbar-backdrop {
+            position        : fixed;
+            background-color: rgba(0, 0, 0, 0.2);
+            width           : 100%;
+            height          : 100%;
+            left            : 0;
+            top             : 0;
+            z-index         : 99;
+        }
         .navbar-menu {
             position   : fixed;
             background : $white;
@@ -121,18 +130,8 @@
         }
     }
 
-    .close {
+    .close-menu {
         transform: translate3d(-300px,0,0)!important;
-    }
-    .backdrop {
-        position        : fixed;
-        background-color: rgba(0, 0, 0, 0.2);
-        width           : 100%;
-        height          : 100%;
-        left            : 0;
-        top             : 0;
-        z-index         : 99;
-
     }
 }
 

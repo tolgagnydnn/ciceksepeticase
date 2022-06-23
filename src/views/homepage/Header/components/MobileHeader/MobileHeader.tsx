@@ -34,12 +34,15 @@ const MobileHeader = () => {
           <input type="text" name="arama" className="search-input" placeholder="Ürün Ara" />
           <button className="search-btn">
             Ara
-          </button> 
+          </button>
         </form>
       </div>
-        <div className={openStatus ? 'mobilenavbar__navbar backdrop' : 'mobilenavbar__navbar'}>
-          <MobileNavbar openStatus={openStatus} setOpenStatus={setOpenStatus} />
-        </div>
+      <div className='mobilenavbar__navbar'>
+        {openStatus &&
+          <div className='navbar-backdrop' onClick={() => setOpenStatus(false)}></div>
+        }
+        <MobileNavbar openStatus={openStatus} setOpenStatus={setOpenStatus} />
+      </div>
     </div>
   )
 }
