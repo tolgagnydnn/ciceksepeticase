@@ -65,8 +65,14 @@
             margin-bottom: 20px;
         }
         &__info {
-            .info-title,  .info-downloadimages {
+            .info-title {
                 justify-content: center;
+            }
+            .info-downloadimages {
+                justify-content: center;
+                img {
+                    width: 100%;
+                }
             }
         }
     }

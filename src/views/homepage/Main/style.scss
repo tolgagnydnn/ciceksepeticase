@@ -80,17 +80,22 @@
 // Responsives
 @media (max-width: 767.98px) {
     .main {
-        padding:25px;
+        padding:15px 20px;
         margin-top: 0;
-        &__breadcrumb {
-            border-top: solid 1px #f2f2f2;
-        }
         &__categories, &__title {
             display: none;
         }
         &__products {
             .products-allproducts {
                 grid-template-columns: 1fr 1fr;
+            }
+            .product-addbasket {
+                button {
+                    margin-top: 5px;
+                    font-size: 12px!important;
+                    border-radius: 5px!important;
+                    padding: 5px 10px;
+                }
             }
         }
         &__discountcards {

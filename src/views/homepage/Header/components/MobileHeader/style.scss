@@ -1,0 +1,138 @@
+@import '../../../../../variables.scss';
+
+.mobilenavbar {
+    &__header {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        padding        : 10px 25px;
+        border-bottom  : solid 1px #f2f2f2;
+
+        .header-basket {
+            @include item-center;
+            padding      : 10px;
+            border-radius: 5px;
+            height       : 20px;
+            width        : 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__search {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        width: 75%;
+        margin: 0 auto;
+        margin-top: 10px;
+
+        .search-form {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            width          : 100%;
+            border         : solid 1px #EDF1F2;
+            border-radius  : 5px;
+        }
+
+        .search-input {
+            width       : 100%;
+            height      : 100%;
+            background  : none;
+            border      : 0;
+            color       : $lightgray;
+            font-size   : 15px;
+            line-height : 19px;
+            padding-left: 20px;
+            font-family : 'Source Sans Pro', sans-serif !important;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .search-btn {
+            border       : 1px solid $blue;
+            border-radius: 5px;
+            background   : $blue;
+            padding      : 4px 15px;
+            color        : $white;
+            font-size    : 14px;
+            line-height  : 22px;
+            cursor       : pointer;
+            font-family  : 'Source Sans Pro', sans-serif !important;
+        }
+    }
+
+    &__navbar {
+        .navbar-menu {
+            position   : fixed;
+            background : $white;
+            top        : 0;
+            left       : 0;
+            z-index    : 100;
+            width      : 280px;
+            height     : 100%;
+            font-size  : 1.15em;
+            transition : all .5s ease;
+
+            .menu-logo {
+                text-align    : center;
+                padding-top   : 15px;
+                padding-bottom: 5px;
+                border-bottom : solid 1px #f2f2f2;
+            }
+
+            .navbar-items {
+                ul {
+                    margin    : 1rem 0;
+                    padding   : 0;
+                    list-style: none;
+
+                    li {
+                        border-bottom: 1px solid #eaeaea;
+
+                        a {
+                            align-items    : center;
+                            color          : #333;
+                            display        : flex;
+                            min-height     : 2.2rem;
+                            text-decoration: none;
+                            padding        : 0.2rem 0.5rem 0.2rem 1rem;
+                            font-size      : 15px;
+                            line-height    : 25px;
+                        }
+                    }
+                }
+            }
+            .navbar-close {
+                position: absolute;
+                top: 0;
+                right: -10px;
+                button {
+                    width: 30px;
+                    height: 30px;
+                    border: 0;
+                    border-radius: 50%;
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .close {
+        transform: translate3d(-300px,0,0)!important;
+    }
+    .backdrop {
+        position        : fixed;
+        background-color: rgba(0, 0, 0, 0.2);
+        width           : 100%;
+        height          : 100%;
+        left            : 0;
+        top             : 0;
+        z-index         : 99;
+
+    }
+}
+
