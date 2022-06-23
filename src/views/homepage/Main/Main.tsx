@@ -8,8 +8,10 @@ import activecategoryicon from '../../../assets/images/activecategory.png'
 // Components
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 import Categories from '../components/Categories/Categories'
+import ProductCard from '../components/ProductCard/ProductCard'
 
 const Main = () => {
+
   return (
     <div className='main'>
       <div className='main__title'>
@@ -23,7 +25,7 @@ const Main = () => {
       <div className='main__categories'>
         <div className='categories-title'>
           <img src={categoryicon} alt='categories' />
-          <span> Kategoriler </span>
+          <span> Tüm Kategoriler </span>
         </div>
         <div className='main__categoriesbox'>
           <Categories/>
@@ -35,7 +37,7 @@ const Main = () => {
           <span> Kategoriler </span>
         </div>
         <div className='products-allproducts'>
-            
+            <ProductCard/>
         </div>
       </div>
     </div>

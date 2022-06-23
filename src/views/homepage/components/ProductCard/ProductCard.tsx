@@ -1,8 +1,41 @@
-import React from 'react'
+// React & Redux
+import { useAppSelector } from '../../../../store/hooks'
+
+// Styles
+import './style.scss'
 
 const ProductCard = () => {
+  const { allProducts }: any = useAppSelector(state => state.products)
   return (
-    <div>ProductCard</div>
+    <>
+      {
+        allProducts?.map((product: any) => (
+          <div className='product'>
+            <div className='product-images'>
+              <img src={product.image} alt='productimage' />
+            </div>
+            <div className='product-information'>
+              <div className='product-name-and-cargo'>
+                <div className='product-name'>
+                  <span> {product.name} </span>
+                </div>
+                {product.freeCargo &&
+                  <div className='product-cargo'>
+                    <span> Ücretsiz Teslimat </span>
+                  </div>
+                }
+              </div>
+              <div className='product-price'>
+                <span> {product.price} </span>
+              </div>
+            </div>
+            <div className='product-addbasket'>
+              <button> Sepete Ekle </button>
+            </div>
+          </div>
+        ))
+      }
+    </>
   )
 }
 
