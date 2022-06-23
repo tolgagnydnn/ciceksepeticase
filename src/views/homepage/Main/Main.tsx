@@ -16,14 +16,14 @@ const Main = () => {
   return (
     <div className='main'>
       <div className='main__title'>
-        <div className='title-text'>
+        <div className='title-text container'>
            <h1> Çiçek Sepeti </h1>
         </div>
       </div>
-      <div className='main__breadcrumb'>
+      <div className='main__breadcrumb container'>
         <BreadCrumb/>
       </div>
-      <div className='main__categories'>
+      <div className='main__categories container'>
         <div className='categories-title'>
           <img src={categoryicon} alt='categories' />
           <span> Tüm Kategoriler </span>
@@ -32,7 +32,7 @@ const Main = () => {
           <Categories/>
         </div>
       </div>
-      <div className='main__products'>
+      <div className='main__products container'>
         <div className="products-title">
           <img src={activecategoryicon} alt='categories' />
           <span> Kategoriler </span>

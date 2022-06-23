@@ -36,3 +36,14 @@
         }
     }
 }
+
+
+// Responsives
+@media (max-width: 767.98px) {
+    .footermenu {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 20px;
+        border: 0;
+    }
+}

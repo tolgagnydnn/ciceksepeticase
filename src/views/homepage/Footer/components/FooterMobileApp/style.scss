@@ -19,8 +19,8 @@
             justify-content: space-around;
             align-items: center;
             .title-description {
+                padding-left: 20px;
                 span {
-                    padding-left: 20px;
                     display: block;
                     &:first-child {
                         font-size: 18px;
@@ -50,3 +50,53 @@
         }
     }
 }
+
+
+// Responsives
+@media (max-width: 767.98px) {
+    .mobileapp {
+        background: none;
+        display: block;
+        height: auto;
+        margin-bottom: 20px;
+        &__image {
+            position: static;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &__info {
+            .info-title,  .info-downloadimages {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .mobileapp {
+        &__info {
+            margin-left: 10px;
+            .info-title {
+                justify-content: flex-start;
+            }
+            .title-description {
+                padding-left: 10px!important;
+                span {
+                    &:first-child {
+                        font-size: 14px!important;
+                    }
+                    &:last-child {
+                        font-size: 14px!important;
+                    }
+                }
+            }
+            .info-downloadimages {
+                img {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+

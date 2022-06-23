@@ -45,3 +45,68 @@
 .stationaryicon-card {
     background: #E2F7E1;
 }
+
+
+// Responsives
+@media (max-width: 767.98px) {
+    .discountcard {
+        margin-bottom: 20px;
+        &__info {
+            .discountcard-title {
+                font-size: 15px;
+                line-height: 20px;
+            }
+            .discountcard-btn {
+                button {
+                    font-size: 12px;
+                    padding: 5px 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .discountcard {
+        max-width: 320px;
+        &__info {
+            .discountcard-title {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            .discountcard-btn {
+                button {
+                    font-size: 12px;
+                    padding: 5px 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .discountcard {
+        .card-image {
+            img {
+                width: 100%;
+            }
+        }
+        &__info {
+            .discountcard-title {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1540px) {
+    .discountcard {
+        &__info {
+            .discountcard-title {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+}

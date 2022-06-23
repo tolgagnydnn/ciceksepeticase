@@ -10,7 +10,7 @@ import FooterAbout from './components/FooterAbout/FooterAbout'
 const Footer = () => {
   return (
     <div className='footer'>
-      <div className='footer__container'>
+      <div className='footer__container container'>
         <FooterMobileApp />
         <div className='aboutandmenu'>
           <FooterAbout />

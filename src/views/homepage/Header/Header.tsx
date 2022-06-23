@@ -10,7 +10,7 @@ import lighticon from '../../../assets/images/lighticon.svg'
 
 const Header = () => {
   return (
-    <div className='header'>
+    <div className='header container'>
       <div className='header__logo'>
         <img src={mainLogo} alt="logo" />
       </div>
