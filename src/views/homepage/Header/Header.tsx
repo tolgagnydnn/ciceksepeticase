@@ -1,6 +1,3 @@
-// Styles
-import './style.scss'
-
 // Hooks
 import useMediaQuery from '../../../hooks/useMediaQuery'
 import MobileHeader from './components/MobileHeader/MobileHeader'

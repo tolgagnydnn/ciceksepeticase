@@ -9,7 +9,10 @@ import './style.scss'
 import mainLogo from '../../../../../assets/images/logo.png'
 import searchicon from '../../../../../assets/images/searchbutton.png'
 import basket from '../../../../../assets/images/basket.png'
-import lighticon from '../../../../../assets/images/lighticon.svg'
+
+
+// Components
+import FreeCargo from '../../../components/FreeCargo/FreeCargo'
 
 const DesktopHeader = () => {
     const dispatch = useAppDispatch()
@@ -53,15 +56,8 @@ const DesktopHeader = () => {
                         </div>
                     }
                 </div>
-                <div className='basket-warning'>
-                    <div className='warning-text'>
-                        <img src={lighticon} alt="lighticon" />
-                        <p> <span>50 TL</span> ürün daha ekleyin kargo bedava </p>
-                    </div>
-                    <div className='warning-progress'>
-                        progressbar
-                    </div>
-
+                <div className='basket-cargobox'>
+                    <FreeCargo/>
                 </div>
             </div>
         </div>

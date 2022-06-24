@@ -21,7 +21,8 @@ export const productSlice = createSlice({
     totalProducts: 0,
     basket: {
       products: [],
-      count: 0
+      count: 0,
+      totalPrice: 0
     },
     categoryLoading: null,
     productLoading: null
@@ -34,6 +35,15 @@ export const productSlice = createSlice({
       });
       state.basket.count = count
     },
+    calculatePrice: (state:any) => {
+      let totalPrice = 0
+      state.basket.products.forEach((basketObj:any) => {
+        let count = basketObj.orderCount
+        let price = basketObj.price
+        totalPrice += count * price
+      });
+      state.basket.totalPrice = totalPrice
+    },
     addBasket: (state:any, action:any) => {
       const orderObj = {...action.payload, orderCount: 1}
       const isExists = state.basket.products.findIndex((el:any) => el.id === action.payload.id) > -1
@@ -41,6 +51,7 @@ export const productSlice = createSlice({
         state.basket.products.push(orderObj)
       }
       productSlice.caseReducers.calculateCount(state)
+      productSlice.caseReducers.calculatePrice(state)
     },
     incrementBasketItem: (state:any, action:any) => {
       const index = state.basket.products.findIndex((el:any) => el.id === action.payload.id)
@@ -48,6 +59,7 @@ export const productSlice = createSlice({
         state.basket.products[index].orderCount += 1
       }
       productSlice.caseReducers.calculateCount(state)
+      productSlice.caseReducers.calculatePrice(state)
     },
     decrementBasketItem: (state:any, action:any) => {
       const index = state.basket.products.findIndex((el:any) => el.id === action.payload.id)
@@ -60,6 +72,7 @@ export const productSlice = createSlice({
         }
       }
       productSlice.caseReducers.calculateCount(state)
+      productSlice.caseReducers.calculatePrice(state)
     }
    },
   extraReducers: builder => {
@@ -82,7 +95,6 @@ export const productSlice = createSlice({
     })
   }
 })
-
 
 export const {addBasket, incrementBasketItem, decrementBasketItem} = productSlice.actions
 export default productSlice.reducer

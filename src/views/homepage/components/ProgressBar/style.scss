@@ -1,0 +1,35 @@
+@import '../../../../variables.scss';
+
+.progressbar {
+    display        : flex;
+    align-items    : center;
+    justify-content: flex-start;
+    width          : 100%;
+
+    &__progress {
+        width        : 100%;
+        background   : #D01D32;
+        min-height   : 1px;
+        position     : relative;
+        overflow     : hidden;
+        border-radius: 3px;
+        height       : 5px;
+
+        .progress-bar {
+            background: #FFCE00;
+            height    : 100%;
+            position  : absolute;
+            left      : 0;
+        }
+    }
+}
+
+@keyframes moveToRight {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
+}

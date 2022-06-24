@@ -3,6 +3,7 @@ import './style.scss'
 
 // Images
 import mainLogo from '../../../../../assets/images/logo.png'
+import Categories from '../../../components/Categories/Categories';
 
 const MobileNavbar = (props: any) => {
 
@@ -14,20 +15,7 @@ const MobileNavbar = (props: any) => {
                 <img src={mainLogo} alt="logo" />
             </div>
             <div className='navbar-items'>
-                <ul>
-                    <li>
-                        <a href='!#'> Çiçekler </a>
-                    </li>
-                    <li>
-                        <a href='!#'> Hediyeler </a>
-                    </li>
-                    <li>
-                        <a href='!#'> Güller </a>
-                    </li>
-                    <li>
-                        <a href='!#'> Papatyalar </a>
-                    </li>
-                </ul>
+                <Categories/>
             </div>
             <div className='navbar-close'>
                 <button onClick={() => setOpenStatus(false)}> &times; </button>

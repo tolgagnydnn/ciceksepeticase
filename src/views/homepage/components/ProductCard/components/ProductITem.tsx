@@ -46,12 +46,12 @@ const ProductITem = (props: any) => {
             <div className='product-addbasket'>
                 {
                     orderedBasketObject
-                        ? <div className='multibasket'>
+                        ? <div className='addbasket-multibtn'>
                             <button onClick={() => decrementBasket(product)}> - </button>
                             <span> {orderedBasketObject?.orderCount} </span>
                             <button onClick={() => incrementBasket(product)}> + </button>
                         </div>
-                        : <button onClick={() => dispatch(addBasket(product))}> Sepete Ekle </button>
+                        : <button className="addBasket-btn" onClick={() => dispatch(addBasket(product))}> Sepete Ekle </button>
                 }
             </div>
         </div>

@@ -11,13 +11,17 @@ import menuicon from '../../../../../assets/images/categories.png'
 
 // Components
 import MobileNavbar from './MobileNavbar'
+import FreeCargo from '../../../components/FreeCargo/FreeCargo'
 
 const MobileHeader = () => {
-
+  
   const [openStatus, setOpenStatus] = useState(false)
 
   return (
     <div className='mobilenavbar'>
+      <div className='mobilenavbar__freecargo'>
+        <FreeCargo/>
+      </div>
       <div className='mobilenavbar__header'>
         <div className='header-menuicon'>
           <img onClick={() => setOpenStatus(true)} src={menuicon} alt="menuicon" />
