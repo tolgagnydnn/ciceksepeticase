@@ -12,11 +12,11 @@ import ProgressBar from '../ProgressBar/ProgressBar'
 
 const FreeCargo = () => {
 
+    // Global Store
     const store = useAppSelector(state => state.products)
 
     const addPrice = 500 - store.basket.totalPrice
     const percent = store.basket.totalPrice * 100 / 500
-    console.log(percent)
 
     return (
         <div className='cargowarningbox'>

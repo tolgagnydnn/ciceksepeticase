@@ -5,9 +5,12 @@ import { addBasket, incrementBasketItem, decrementBasketItem } from "../../../Ma
 
 const ProductITem = (props: any) => {
 
+    // Props
     const { product, basketProducts } = props
+
     const dispatch = useAppDispatch()
 
+    // Local State
     const [orderedBasketObject, setOrderedBasketObject] = useState<any>()
 
     useEffect(() => {
@@ -25,25 +28,25 @@ const ProductITem = (props: any) => {
 
     return (
         <div className='product' key={product.id}>
-            <div className='product-images'>
+            <div className='product__images'>
                 <img src={product.image} alt='productimage' />
             </div>
-            <div className='product-information'>
-                <div className='product-name-and-cargo'>
-                    <div className='product-name'>
+            <div className='product__productinformation'>
+                <div className='productinformation-name-and-cargo'>
+                    <div className='productinformation-name'>
                         <span> {product.name} </span>
                     </div>
                     {product.freeCargo &&
-                        <div className='product-cargo'>
+                        <div className='productinformation-cargo'>
                             <span> Ücretsiz Teslimat </span>
                         </div>
                     }
                 </div>
-                <div className='product-price'>
+                <div className='productinformation-price'>
                     <span> {`${product.price.toFixed(2)} TL`} </span>
                 </div>
             </div>
-            <div className='product-addbasket'>
+            <div className='product__addbasket'>
                 {
                     orderedBasketObject
                         ? <div className='addbasket-multibtn'>

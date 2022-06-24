@@ -1,11 +1,14 @@
 // React & Redux
 import { useAppSelector } from '../../../../store/hooks'
-import ProductITem from './components/ProductITem'
 
 // Styles
 import './style.scss'
 
+// Components
+import ProductITem from './components/ProductITem'
+
 const ProductCard = () => {
+
   const { allProducts, basket: { products } }: any = useAppSelector(state => state.products)
 
   return (

@@ -11,12 +11,15 @@ import DesktopHeader from './components/DesktopHeader/DesktopHeader'
 
 const Header = () => {
 
-  const store = useAppSelector(state => state.products)
-  
-  const isMobile = useMediaQuery('(max-width: 767.98px)')
-
   const dispatch = useAppDispatch()
 
+  // Global State
+  const store = useAppSelector(state => state.products)
+
+  // Responsive Status
+  const isMobile = useMediaQuery('(max-width: 767.98px)')
+
+  // Search Products
   const searchProducts = (value: string) => {
     if (value.length > 2) {
       dispatch(getAllProducts({ ...store.params, q: value }))

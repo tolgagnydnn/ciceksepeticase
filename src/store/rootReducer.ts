@@ -1,4 +1,4 @@
-// Reducers Imports
+// Reducers
 import products from '../views/homepage/Main/mainSlice'
 
 const rootReducer = {

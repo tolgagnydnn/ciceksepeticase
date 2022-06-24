@@ -9,8 +9,9 @@ import basket from '../../../../../assets/images/basket.png'
 // Components
 import FreeCargo from '../../../components/FreeCargo/FreeCargo'
 
-const DesktopHeader = (props:any) => {
-   
+const DesktopHeader = (props: any) => {
+
+    // Global State
     const { store, searchProducts } = props
 
     return (
@@ -44,7 +45,7 @@ const DesktopHeader = (props:any) => {
                     }
                 </div>
                 <div className='basket-cargobox'>
-                    <FreeCargo/>
+                    <FreeCargo />
                 </div>
             </div>
         </div>

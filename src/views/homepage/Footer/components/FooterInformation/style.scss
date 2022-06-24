@@ -2,15 +2,16 @@
 
 .footerinformation {
     padding-top: 100px;
-    text-align: center;
-    max-width: 1320px;
-    margin:0 auto;
+    text-align : center;
+    max-width  : 1320px;
+    margin     : 0 auto;
+
     p {
-        padding:0;
-        margin:0;
-        font-size: 15px;
+        padding    : 0;
+        margin     : 0;
+        font-size  : 15px;
         line-height: 22px;
-        color: $black;
+        color      : $black;
         font-weight: $medium;
     }
 }

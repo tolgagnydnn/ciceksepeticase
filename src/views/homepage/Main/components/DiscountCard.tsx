@@ -2,10 +2,11 @@
 import './style.scss'
 
 const DiscountCard = (props: any) => {
+    //Props
     const { image, title, buttonTitle, color } = props
 
     return (
-        <div className='discountcard' style={{background: `${color}` }}>
+        <div className='discountcard' style={{ background: `${color}` }}>
             <div className='card-image'>
                 <img src={image} alt="deliveryicon" />
             </div>

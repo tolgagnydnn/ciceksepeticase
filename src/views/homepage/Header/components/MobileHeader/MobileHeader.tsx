@@ -31,7 +31,7 @@ const MobileHeader = (props: any) => {
           <img src={mainLogo} alt="mainLogo" />
         </div>
         <div className='header-basket'>
-          <img src={basket} alt="basket"/>
+          <img src={basket} alt="basket" />
           {store.basket.count > 0 &&
             <div className='basket-count'>
               <span>  {store.basket.count}  </span>

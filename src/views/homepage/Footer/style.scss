@@ -31,25 +31,29 @@
     }
 }
 
-
 // Responsives
 @media (max-width: 767.98px) {
     .footer {
-        padding: 20px;
+        padding   : 20px;
         margin-top: 0;
+
         &__container {
             padding-top: 0;
         }
+
         .aboutandmenu {
             grid-template-columns: 100%;
             text-align           : center;
         }
+
         .footerabout__socialmedia {
             justify-content: center;
         }
+
         .footerinformation {
             padding-top: 20px;
         }
+
         .footer__copyright {
             margin-top: 20px;
         }

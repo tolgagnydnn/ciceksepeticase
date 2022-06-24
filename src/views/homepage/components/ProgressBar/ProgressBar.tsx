@@ -2,7 +2,8 @@
 import './style.scss'
 
 const ProgressBar = (props: any) => {
-    const {percent } = props
+    // Props
+    const { percent } = props
 
     return (
         <div className="progressbar">

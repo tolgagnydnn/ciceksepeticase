@@ -1,49 +1,58 @@
 @import '../../../../../variables.scss';
 
 .mobileapp {
-    background: white;
-    display: flex;
+    background     : white;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    border-radius: 111px;
-    height: 222px;
-    margin-bottom: 112px;
+    align-items    : center;
+    border-radius  : 111px;
+    height         : 222px;
+    margin-bottom  : 112px;
+
     &__image {
         position: relative;
-        top: -65px;
+        top     : -65px;
     }
+
     &__info {
         margin-left: 31px;
+
         .info-title {
-            display: flex;
+            display        : flex;
             justify-content: space-around;
-            align-items: center;
-            .title-description {
+            align-items    : center;
+
+            .info-description {
                 padding-left: 20px;
+
                 span {
                     display: block;
+
                     &:first-child {
-                        font-size: 18px;
-                        line-height: 23px;
-                        font-weight: bold;
-                        color: $black;
+                        font-size    : 18px;
+                        line-height  : 23px;
+                        font-weight  : bold;
+                        color        : $black;
                         margin-bottom: 6px;
                     }
+
                     &:last-child {
-                        font-size: 16px;
-                        line-height: 20px;
+                        font-size     : 16px;
+                        line-height   : 20px;
                         letter-spacing: 0;
-                        color: $black;
-                        font-weight: $medium;
+                        color         : $black;
+                        font-weight   : $medium;
                     }
                 }
             }
         }
+
         .info-downloadimages {
-            margin-top: 35px;
-            display: flex;
+            margin-top     : 35px;
+            display        : flex;
             justify-content: flex-start;
-            align-items: center;
+            align-items    : center;
+
             .downloadimages-googleplay {
                 margin-right: 11.5px;
             }
@@ -51,25 +60,28 @@
     }
 }
 
-
 // Responsives
 @media (max-width: 767.98px) {
     .mobileapp {
-        background: none;
-        display: block;
-        height: auto;
+        background   : none;
+        display      : block;
+        height       : auto;
         margin-bottom: 20px;
+
         &__image {
-            position: static;
-            text-align: center;
+            position     : static;
+            text-align   : center;
             margin-bottom: 20px;
         }
+
         &__info {
             .info-title {
                 justify-content: center;
             }
+
             .info-downloadimages {
                 justify-content: center;
+
                 img {
                     width: 100%;
                 }
@@ -82,20 +94,25 @@
     .mobileapp {
         &__info {
             margin-left: 10px;
+
             .info-title {
                 justify-content: flex-start;
             }
-            .title-description {
-                padding-left: 10px!important;
+
+            .info-description {
+                padding-left: 10px !important;
+
                 span {
                     &:first-child {
-                        font-size: 14px!important;
+                        font-size: 14px !important;
                     }
+
                     &:last-child {
-                        font-size: 14px!important;
+                        font-size: 14px !important;
                     }
                 }
             }
+
             .info-downloadimages {
                 img {
                     width: 80%;
@@ -104,5 +121,3 @@
         }
     }
 }
-
-

@@ -3,11 +3,13 @@ import './style.scss'
 
 // Images
 import mainLogo from '../../../../../assets/images/logo.png'
-import Categories from '../../../components/Categories/Categories';
+
+// Components
+import Categories from '../../../components/Categories/Categories'
 
 const MobileNavbar = (props: any) => {
 
-    const {openStatus, setOpenStatus} = props;
+    const { openStatus, setOpenStatus } = props
 
     return (
         <div className={openStatus ? 'navbar-menu' : 'navbar-menu close-menu'}>
@@ -15,7 +17,7 @@ const MobileNavbar = (props: any) => {
                 <img src={mainLogo} alt="logo" />
             </div>
             <div className='navbar-items'>
-                <Categories setOpenStatus={setOpenStatus}/>
+                <Categories setOpenStatus={setOpenStatus} />
             </div>
             <div className='navbar-close'>
                 <button onClick={() => setOpenStatus(false)}> &times; </button>

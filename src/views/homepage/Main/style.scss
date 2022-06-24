@@ -80,34 +80,41 @@
 // Responsives
 @media (max-width: 767.98px) {
     .main {
-        padding:15px 20px;
+        padding   : 15px 20px;
         margin-top: 0;
-        .hidemobile, &__title {
+
+        .hidemobile,
+        &__title {
             display: none;
         }
+
         &__products {
             .products-allproducts {
                 grid-template-columns: 1fr 1fr;
             }
+
             .product-addbasket {
                 .addBasket-btn {
-                    margin-top: 5px;
-                    font-size: 12px!important;
-                    border-radius: 5px!important;
-                    padding: 5px 10px;
+                    margin-top   : 5px;
+                    font-size    : 12px !important;
+                    border-radius: 5px !important;
+                    padding      : 5px 10px;
                 }
+
                 .addbasket-multibtn {
                     button {
-                        width: 25px!important;
-                        height: 25px!important;
+                        width    : 25px !important;
+                        height   : 25px !important;
                         font-size: 15px;
                     }
+
                     span {
-                        font-size: 16px!important;
+                        font-size: 16px !important;
                     }
                 }
             }
         }
+
         &__discountcards {
             display: block;
         }
@@ -124,16 +131,18 @@
                 }
             }
         }
+
         &__products {
             .products-allproducts {
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
         }
+
         &__discountcards {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
+            display              : flex;
+            justify-content      : center;
+            align-items          : center;
+            flex-wrap            : wrap;
             grid-template-columns: none;
         }
     }
@@ -148,11 +157,13 @@
                 }
             }
         }
+
         &__products {
             .products-allproducts {
                 grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
             }
         }
+
         &__discountcards {
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         }
@@ -168,6 +179,7 @@
                 }
             }
         }
+
         &__discountcards {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
