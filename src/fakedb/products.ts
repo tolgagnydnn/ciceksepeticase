@@ -381,14 +381,14 @@ mock.onGet('/api/categories/all-categories').reply(200, data.categories)
 // ------------------------------------------------
 mock.onGet('/apps/categories/getCategoryProducts').reply(config => {
     console.log(config.params)
-    //const { id = '', q = '', } = config.params
-    //const queryLowered = q.toLowerCase()
-    //const filteredData = data.products.filter(product => product.name.toLowerCase().includes(queryLowered))
-    const filteredData = data.products.filter(product => product.categoryId === config.params)
+    const { id = '', q = '', } = config.params
+    const queryLowered = q.toLowerCase()
+    const filteredData = data.products.filter(product => product.categoryId === id)
+    const searchFilteredData = filteredData.filter(product => product.name.toLowerCase().includes(queryLowered))
     return [
       200,
       {
-        products: filteredData,
+        products: searchFilteredData,
         total: filteredData.length
       }
     ]

@@ -12,7 +12,10 @@ function App() {
 
   const dispatch = useAppDispatch()
   useEffect(()=> {
-    dispatch(getAllProducts(1))
+    dispatch(getAllProducts({
+      id:1,
+      q: ''
+    }))
     dispatch(getAllCategories())
   }, [dispatch])
   

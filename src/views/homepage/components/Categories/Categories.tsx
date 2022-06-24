@@ -18,12 +18,13 @@ const Categories = () => {
 
   // Local State
   const [activeCategory, setActiveCategory] = useState<any>(allCategories[0]);
-  
-  console.log(allCategories[0], activeCategory)
 
   const handleActiveCategory = (category: any) => {
     setActiveCategory(category)
-    dispatch(getAllProducts(category.id))
+    dispatch(getAllProducts({
+      id:category.id,
+      q: ''
+    }))
   }
 
   return (
