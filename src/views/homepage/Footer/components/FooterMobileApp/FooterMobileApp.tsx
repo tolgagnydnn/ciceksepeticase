@@ -2,10 +2,10 @@
 import './style.scss'
 
 // Images
-import telephone from '../../../../../assets/images/telephone.png'
-import qrcode from '../../../../../assets/images/qrcode.png'
-import googleplay from '../../../../../assets/images/googleplay.png'
-import appstore from '../../../../../assets/images/appstore.png'
+import telephone from 'assets/images/telephone.png'
+import qrcode from 'assets/images/qrcode.png'
+import googleplay from 'assets/images/googleplay.png'
+import appstore from 'assets/images/appstore.png'
 
 const FooterMobileApp = () => {
   return (

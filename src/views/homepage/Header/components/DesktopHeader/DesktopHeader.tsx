@@ -2,9 +2,9 @@
 import './style.scss'
 
 // İmages & Icon
-import mainLogo from '../../../../../assets/images/logo.png'
-import searchicon from '../../../../../assets/images/searchbutton.png'
-import basket from '../../../../../assets/images/basket.png'
+import mainLogo from 'assets/images/logo.png'
+import searchicon from 'assets/images/searchbutton.png'
+import basket from 'assets/images/basket.png'
 
 // Components
 import FreeCargo from '../../../components/FreeCargo/FreeCargo'

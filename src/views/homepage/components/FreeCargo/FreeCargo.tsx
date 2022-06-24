@@ -2,7 +2,7 @@
 import { useAppSelector } from '../../../../store/hooks'
 
 // Images
-import lighticon from '../../../../assets/images/lighticon.svg'
+import lighticon from 'assets/images/lighticon.svg'
 
 // Styles
 import './style.scss'

@@ -2,7 +2,7 @@
 import './style.scss'
 
 // Images
-import mainLogo from '../../../../../assets/images/logo.png'
+import mainLogo from 'assets/images/logo.png'
 
 // Components
 import Categories from '../../../components/Categories/Categories'

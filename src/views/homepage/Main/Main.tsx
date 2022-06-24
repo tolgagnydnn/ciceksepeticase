@@ -5,11 +5,11 @@ import { useAppSelector } from '../../../store/hooks'
 import './style.scss'
 
 // Images
-import categoryicon from '../../../assets/images/categories.png'
-import activecategoryicon from '../../../assets/images/activecategory.png'
-import deliveryicon from '../../../assets/images/deliveryicon.png'
-import gifticon from '../../../assets/images/gifticon.png'
-import stationaryicon from '../../../assets/images/stationaryicon.png'
+import categoryicon from 'assets/images/categories.png'
+import activecategoryicon from 'assets/images/activecategory.png'
+import deliveryicon from 'assets/images/deliveryicon.png'
+import gifticon from 'assets/images/gifticon.png'
+import stationaryicon from 'assets/images/stationaryicon.png'
 
 // Components
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'

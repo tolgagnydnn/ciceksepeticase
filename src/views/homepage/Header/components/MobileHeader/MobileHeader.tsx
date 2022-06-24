@@ -5,9 +5,9 @@ import { useState } from 'react'
 import './style.scss'
 
 // Images
-import mainLogo from '../../../../../assets/images/logo.png'
-import basket from '../../../../../assets/images/mobilebasket.png'
-import menuicon from '../../../../../assets/images/categories.png'
+import mainLogo from 'assets/images/logo.png'
+import basket from 'assets/images/mobilebasket.png'
+import menuicon from 'assets/images/categories.png'
 
 // Components
 import MobileNavbar from './MobileNavbar'

@@ -2,12 +2,12 @@
 import './style.scss'
 
 // Images
-import logo from '../../../../../assets/images/logo.png'
-import facebook from '../../../../../assets/images/facebook.png'
-import twitter from '../../../../../assets/images/twitter.png'
-import instagram from '../../../../../assets/images/instagram.png'
-import youtube from '../../../../../assets/images/youtube.png'
-import blog from '../../../../../assets/images/blog.png'
+import logo from 'assets/images/logo.png'
+import facebook from 'assets/images/facebook.png'
+import twitter from 'assets/images/twitter.png'
+import instagram from 'assets/images/instagram.png'
+import youtube from 'assets/images/youtube.png'
+import blog from 'assets/images/blog.png'
 
 const FooterAbout = () => {
   return (
