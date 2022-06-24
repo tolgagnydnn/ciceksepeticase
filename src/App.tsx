@@ -1,7 +1,7 @@
 // React & Redux
 import { useEffect } from 'react'
 import { useAppDispatch } from './store/hooks';
-import { getAllProducts } from './views/homepage/Main/mainSlice';
+import { getAllCategories, getAllProducts } from './views/homepage/Main/mainSlice';
 
 // Components
 import Footer from './views/homepage/Footer/Footer';
@@ -12,7 +12,8 @@ function App() {
 
   const dispatch = useAppDispatch()
   useEffect(()=> {
-    dispatch(getAllProducts())
+    dispatch(getAllProducts(1))
+    dispatch(getAllCategories())
   }, [dispatch])
   
   return (
@@ -25,3 +26,4 @@ function App() {
 }
 
 export default App;
+
