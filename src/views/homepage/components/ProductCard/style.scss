@@ -75,6 +75,7 @@
             text-align: center;
             padding: 5px;
             button {
+                @include item-center;
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
@@ -84,6 +85,12 @@
                 font-size: 22px;
                 font-weight: $medium;
                 cursor: pointer;
+            }
+            span {
+                font-size: 22px;
+                line-height: 13px;
+                font-weight: $bold;
+                color: $lightgray;
             }
         }
     }

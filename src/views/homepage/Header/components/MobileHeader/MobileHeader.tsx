@@ -13,14 +13,15 @@ import menuicon from '../../../../../assets/images/categories.png'
 import MobileNavbar from './MobileNavbar'
 import FreeCargo from '../../../components/FreeCargo/FreeCargo'
 
-const MobileHeader = () => {
-  
+const MobileHeader = (props: any) => {
+
+  const { store, searchProducts } = props
   const [openStatus, setOpenStatus] = useState(false)
 
   return (
     <div className='mobilenavbar'>
       <div className='mobilenavbar__freecargo'>
-        <FreeCargo/>
+        <FreeCargo />
       </div>
       <div className='mobilenavbar__header'>
         <div className='header-menuicon'>
@@ -31,15 +32,28 @@ const MobileHeader = () => {
         </div>
         <div className='header-basket'>
           <img src={basket} alt="basket" />
+          <div className='basket-count'>
+            {store.basket.count > 0 &&
+              <div className='basket-count'>
+                <span>  {store.basket.count}  </span>
+              </div>
+            }
+          </div>
         </div>
       </div>
       <div className='mobilenavbar__search'>
-        <form className="search-form" id="searchform">
-          <input type="text" name="arama" className="search-input" placeholder="Ürün Ara" />
+        <div className="search-form" id="searchform">
+          <input
+            type="text"
+            name="arama"
+            className="search-input"
+            placeholder="Ürün Ara"
+            onChange={(e) => searchProducts(e.target.value)}
+          />
           <button className="search-btn">
             Ara
           </button>
-        </form>
+        </div>
       </div>
       <div className='mobilenavbar__navbar'>
         {openStatus &&

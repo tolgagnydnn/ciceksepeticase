@@ -1,7 +1,3 @@
-// React & Redux
-import { getAllProducts } from '../../../Main/mainSlice'
-import { useAppDispatch, useAppSelector } from '../../../../../store/hooks'
-
 // Styles
 import './style.scss'
 
@@ -10,21 +6,12 @@ import mainLogo from '../../../../../assets/images/logo.png'
 import searchicon from '../../../../../assets/images/searchbutton.png'
 import basket from '../../../../../assets/images/basket.png'
 
-
 // Components
 import FreeCargo from '../../../components/FreeCargo/FreeCargo'
 
-const DesktopHeader = () => {
-    const dispatch = useAppDispatch()
-    const store = useAppSelector(state => state.products)
-
-    const searchProducts = (value: string) => {
-        if (value.length > 2) {
-            dispatch(getAllProducts({ ...store.params, q: value }))
-        } else {
-            dispatch(getAllProducts({ ...store.params, q: '' }))
-        }
-    }
+const DesktopHeader = (props:any) => {
+   
+    const { store, searchProducts } = props
 
     return (
         <div className='header container'>
