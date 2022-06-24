@@ -13,14 +13,18 @@ const ProductCard = () => {
 
   return (
     <>
-      {
-        allProducts?.map((product: any) => (
+      { allProducts.length > 0 
+        ? allProducts?.map((product: any) => (
           <ProductITem 
             key={product.id}
             basketProducts={products}
             product={product}
           />
         ))
+        : 
+        <div className='noneProduct'>
+            <p> Aradığınız Kriterlerde Ürün Bulunamadı. </p>
+        </div>
       }
     </>
   )
