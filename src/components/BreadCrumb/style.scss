@@ -16,10 +16,9 @@
                 padding-left: 0;
             }
 
-            &:last-child {
-                .list-link {
-                    color: $green;
-                }
+            span {
+                color       : $green;
+                font-size   : 13px;
             }
 
             .list-link {

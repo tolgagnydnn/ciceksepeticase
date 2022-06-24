@@ -15,3 +15,10 @@
         font-weight: $medium;
     }
 }
+
+// Responsives
+@media (max-width: 767.98px) {
+    .footerinformation {
+        padding-top: 20px;
+    }
+}
