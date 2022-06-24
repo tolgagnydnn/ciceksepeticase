@@ -11,12 +11,16 @@ import Main from './views/homepage/Main/Main';
 function App() {
 
   const dispatch = useAppDispatch()
+
   useEffect(()=> {
-    dispatch(getAllProducts({
-      id:1,
-      q: ''
-    }))
-    dispatch(getAllCategories())
+    const promises = [
+      dispatch(getAllProducts({
+        id:1,
+        q: ''
+      })),
+      dispatch(getAllCategories())
+    ]
+    Promise.all(promises)
   }, [dispatch])
   
   return (

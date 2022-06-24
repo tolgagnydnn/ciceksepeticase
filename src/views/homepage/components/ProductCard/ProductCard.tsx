@@ -26,7 +26,7 @@ const ProductCard = () => {
                 }
               </div>
               <div className='product-price'>
-                <span> {`${product.price} TL`} </span>
+                <span> {`${product.price.toFixed(2)} TL`} </span>
               </div>
             </div>
             <div className='product-addbasket'>

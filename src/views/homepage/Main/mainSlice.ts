@@ -21,18 +21,28 @@ export const productSlice = createSlice({
     totalProducts: 0,
     totalPrice: 0,
     basketCount: 0,
+    categoryLoading: null,
+    productLoading: null
   },
   reducers: {},
   extraReducers: builder => {
     builder
+    .addCase(getAllCategories.pending, (state:any, action) => {
+      state.categoryLoading = true
+    })
     .addCase(getAllCategories.fulfilled, (state:any, action) => {
       state.allCategories = action.payload
+      state.categoryLoading = false
     })
-      .addCase(getAllProducts.fulfilled, (state:any, action) => {
-        state.params = action.payload.params
-        state.allProducts = action.payload.data.products
-        state.totalProducts = action.payload.data.total
-      })
+    .addCase(getAllProducts.pending, (state:any, action) => {
+      state.productLoading = true
+    })
+    .addCase(getAllProducts.fulfilled, (state:any, action) => {
+      state.params = action.payload.params
+      state.allProducts = action.payload.data.products
+      state.totalProducts = action.payload.data.total
+      state.productLoading = false
+    })
   }
 })
 
