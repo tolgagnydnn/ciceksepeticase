@@ -10,10 +10,13 @@ import './style.scss'
 // Componets
 import ProgressBar from '../ProgressBar/ProgressBar'
 
-
 const FreeCargo = () => {
 
     const store = useAppSelector(state => state.products)
+
+    const addPrice = 500 - store.basket.totalPrice
+    const percent = store.basket.totalPrice * 100 / 500
+    console.log(percent)
 
     return (
         <div className='cargowarningbox'>
@@ -28,11 +31,11 @@ const FreeCargo = () => {
                         : <>
                             <div className='warning-text'>
                                 <img src={lighticon} alt="lighticon" />
-                                <p> <span> 50 TL</span> ürün daha ekleyin kargo bedava </p>
+                                <p> <span> {`${addPrice.toFixed(2)} TL`} </span> ürün daha ekleyin kargo bedava </p>
                             </div>
                             <div className='warning-progress'>
                                 <ProgressBar
-                                    percent={80}
+                                    percent={percent}
                                 />
                             </div>
                         </>

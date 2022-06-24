@@ -5,10 +5,10 @@
         width           : 100%;
         position        : absolute;
         right           : 0;
-        bottom          : -140%;
+        bottom          : -150%;
         background-color: #F54257;
         border-radius   : 10px;
-        padding         : 5px 10px 10px 17px;
+        padding         : 10px 17px 10px 17px;
 
         &::before {
             content     : '';
@@ -34,7 +34,7 @@
                 margin      : 0;
                 color       : $white;
                 line-height : 25px;
-                padding-left: 4px;
+                padding-left: 2px;
                 font-size   : 12px;
                 font-weight : $bold;
 
@@ -46,23 +46,40 @@
     }
 }
 
-
-
 // Responsives
-@media (max-width: 768px){
+@media (max-width: 767.98px) {
     .cargowarningbox {
         &__warning {
-            position: relative;
+            position     : relative;
             border-radius: 0;
-            padding:5px 10px;
+            padding      : 5px 10px;
+
             &::before {
                 display: none;
             }
+
             .warning-text {
                 justify-content: center;
             }
+
             .warning-progress {
                 display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width:1199.98px) {
+    .cargowarningbox {
+        &__warning {
+            bottom: -160%;
+
+            .warning-text {
+                align-items: flex-start;
+
+                p {
+                    line-height: 15px;
+                }
             }
         }
     }
