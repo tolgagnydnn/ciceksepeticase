@@ -1,18 +1,21 @@
 // React & Redux
 import { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
+import { getAllProducts } from '../../Main/mainSlice';
 
 // Styles
 import './style.scss'
 
-// Categories Data
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
-import { getAllProducts } from '../../Main/mainSlice';
+// Hooks
+import useMediaQuery from '../../../../hooks/useMediaQuery';
 
 const Categories = (props:any | boolean) => {
 
   const {setOpenStatus} = props
 
   const dispatch = useAppDispatch()
+
+  const isMobile = useMediaQuery('(max-width: 767.98px)')
 
   // Global State
   const {allCategories, categoryLoading} = useAppSelector(state => state.products)
@@ -32,7 +35,9 @@ const Categories = (props:any | boolean) => {
       id:category.id,
       q: ''
     }))
-    setOpenStatus(false)
+    if(isMobile) {
+      setOpenStatus(false) 
+    }
   }
 
   return (

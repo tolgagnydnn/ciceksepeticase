@@ -108,29 +108,6 @@
                 padding-bottom: 5px;
                 border-bottom : solid 1px #f2f2f2;
             }
-
-            .navbar-items {
-                ul {
-                    margin    : 1rem 0;
-                    padding   : 0;
-                    list-style: none;
-
-                    li {
-                        border-bottom: 1px solid #eaeaea;
-
-                        a {
-                            align-items    : center;
-                            color          : #333;
-                            display        : flex;
-                            min-height     : 2.2rem;
-                            text-decoration: none;
-                            padding        : 0.2rem 0.5rem 0.2rem 1rem;
-                            font-size      : 15px;
-                            line-height    : 25px;
-                        }
-                    }
-                }
-            }
             .navbar-close {
                 position: absolute;
                 top: 0;

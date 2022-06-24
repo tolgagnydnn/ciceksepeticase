@@ -1,3 +1,6 @@
+// React & Redux
+import { useAppSelector } from '../../../store/hooks'
+
 // Styles
 import './style.scss'
 
@@ -11,7 +14,11 @@ import Categories from '../components/Categories/Categories'
 import ProductCard from '../components/ProductCard/ProductCard'
 import DiscountCards from './components/DiscountCards'
 
+
 const Main = () => {
+
+  const {params, allCategories} = useAppSelector((state:any) => state.products)
+  const categoryName = allCategories.filter((categoryname:any) => categoryname.id === params.id)
 
   return (
     <div className='main'>
@@ -35,7 +42,7 @@ const Main = () => {
       <div className='main__products container'>
         <div className="products-title">
           <img src={activecategoryicon} alt='categories' />
-          <span> Kategoriler </span>
+          <span> {categoryName[0]?.title} </span>
         </div>
         <div className='products-allproducts'>
             <ProductCard/>

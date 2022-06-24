@@ -375,12 +375,11 @@ const data = {
   ]
 }
 
-// All Data
+// All Categories
 mock.onGet('/api/categories/all-categories').reply(200, data.categories)
 
-// ------------------------------------------------
+// All Products
 mock.onGet('/apps/categories/getCategoryProducts').reply(config => {
-    console.log(config.params)
     const { id = '', q = '', } = config.params
     const queryLowered = q.toLowerCase()
     const filteredData = data.products.filter(product => product.categoryId === id)
