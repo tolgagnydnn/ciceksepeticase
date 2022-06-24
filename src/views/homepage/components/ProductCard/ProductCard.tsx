@@ -1,38 +1,22 @@
 // React & Redux
 import { useAppSelector } from '../../../../store/hooks'
+import ProductITem from './components/ProductITem'
 
 // Styles
 import './style.scss'
 
 const ProductCard = () => {
-  const { allProducts }: any = useAppSelector(state => state.products)
+  const { allProducts, basket: { products } }: any = useAppSelector(state => state.products)
+
   return (
     <>
       {
         allProducts?.map((product: any) => (
-          <div className='product' key={product.id}>
-            <div className='product-images'>
-              <img src={product.image} alt='productimage' />
-            </div>
-            <div className='product-information'>
-              <div className='product-name-and-cargo'>
-                <div className='product-name'>
-                  <span> {product.name} </span>
-                </div>
-                {product.freeCargo &&
-                  <div className='product-cargo'>
-                    <span> Ücretsiz Teslimat </span>
-                  </div>
-                }
-              </div>
-              <div className='product-price'>
-                <span> {`${product.price.toFixed(2)} TL`} </span>
-              </div>
-            </div>
-            <div className='product-addbasket'>
-              <button> Sepete Ekle </button>
-            </div>
-          </div>
+          <ProductITem 
+            key={product.id}
+            basketProducts={products}
+            product={product}
+          />
         ))
       }
     </>

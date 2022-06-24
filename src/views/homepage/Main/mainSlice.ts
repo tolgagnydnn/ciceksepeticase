@@ -19,12 +19,49 @@ export const productSlice = createSlice({
     allProducts: [],
     allCategories: [],
     totalProducts: 0,
-    totalPrice: 0,
-    basketCount: 0,
+    basket: {
+      products: [],
+      count: 0
+    },
     categoryLoading: null,
     productLoading: null
   },
-  reducers: {},
+  reducers: {
+    calculateCount: (state:any) => {
+      let count = 0
+      state.basket.products.forEach((basketObj:any) => {
+        count += basketObj.orderCount
+      });
+      state.basket.count = count
+    },
+    addBasket: (state:any, action:any) => {
+      const orderObj = {...action.payload, orderCount: 1}
+      const isExists = state.basket.products.findIndex((el:any) => el.id === action.payload.id) > -1
+      if (!isExists) {
+        state.basket.products.push(orderObj)
+      }
+      productSlice.caseReducers.calculateCount(state)
+    },
+    incrementBasketItem: (state:any, action:any) => {
+      const index = state.basket.products.findIndex((el:any) => el.id === action.payload.id)
+      if(index > -1) {
+        state.basket.products[index].orderCount += 1
+      }
+      productSlice.caseReducers.calculateCount(state)
+    },
+    decrementBasketItem: (state:any, action:any) => {
+      const index = state.basket.products.findIndex((el:any) => el.id === action.payload.id)
+      if(index > -1) {
+        if (state.basket.products[index].orderCount > 1) {
+          state.basket.products[index].orderCount -= 1
+        } else {
+          const filteredObj = state.basket.products.filter((el:any) => el.id !== state.basket.products[index].id)
+          state.basket.products = [...filteredObj]
+        }
+      }
+      productSlice.caseReducers.calculateCount(state)
+    }
+   },
   extraReducers: builder => {
     builder
     .addCase(getAllCategories.pending, (state:any, action) => {
@@ -46,4 +83,6 @@ export const productSlice = createSlice({
   }
 })
 
+
+export const {addBasket, incrementBasketItem, decrementBasketItem} = productSlice.actions
 export default productSlice.reducer

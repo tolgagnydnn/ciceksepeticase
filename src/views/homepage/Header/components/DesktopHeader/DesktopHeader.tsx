@@ -13,9 +13,9 @@ import lighticon from '../../../../../assets/images/lighticon.svg'
 
 const DesktopHeader = () => {
     const dispatch = useAppDispatch()
-    const store  = useAppSelector(state => state.products)
+    const store = useAppSelector(state => state.products)
 
-    const searchProducts = (value:string) => {
+    const searchProducts = (value: string) => {
         if (value.length > 2) {
             dispatch(getAllProducts({ ...store.params, q: value }))
         } else {
@@ -31,13 +31,13 @@ const DesktopHeader = () => {
             <div className='header__search'>
                 <div className="search-form" id="searchform">
                     <img src={searchicon} alt="search" />
-                    <input 
-                        type="text" 
-                        name="arama" 
-                        className="search-input" 
+                    <input
+                        type="text"
+                        name="arama"
+                        className="search-input"
                         placeholder="Ürün Ara"
                         onChange={(e) => searchProducts(e.target.value)}
-                     />
+                    />
                     <button className="search-btn">
                         Ara
                     </button>
@@ -47,9 +47,11 @@ const DesktopHeader = () => {
                 <div className='basket-content'>
                     <img src={basket} alt="basket" />
                     <span className='basket-title'> Sepetim </span>
-                    <div className='basket-count'>
-                        <span> 2 </span>
-                    </div>
+                    {store.basket.count > 0 &&
+                        <div className='basket-count'>
+                            <span>  {store.basket.count}  </span>
+                        </div>
+                    }
                 </div>
                 <div className='basket-warning'>
                     <div className='warning-text'>

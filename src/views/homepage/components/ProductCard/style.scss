@@ -66,5 +66,10 @@
                 color: $white;
             }
         }
+        .multibasket {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
