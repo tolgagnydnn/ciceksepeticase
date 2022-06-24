@@ -45,13 +45,12 @@ const Categories = (props:any | boolean) => {
       {
         allCategories?.map((category: any) => (
           <div key={category.id} className='categories__title'>
-            <a
-              href='!#'
+            <button
               className={activeCategory?.id === category.id ? "active" : ""}
               onClick={(): any => handleActiveCategory(category)}
             >
-              {category?.title}
-            </a>
+              <span> {category?.title} </span>
+            </button>
           </div>
         ))
       }

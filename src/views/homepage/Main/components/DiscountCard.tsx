@@ -5,7 +5,6 @@ const DiscountCard = (props: any) => {
     const { image, title, buttonTitle, color } = props
 
     return (
-
         <div className='discountcard' style={{background: `${color}` }}>
             <div className='card-image'>
                 <img src={image} alt="deliveryicon" />
