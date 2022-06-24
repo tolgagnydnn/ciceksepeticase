@@ -23,7 +23,7 @@ const Main = () => {
       <div className='main__breadcrumb container'>
         <BreadCrumb/>
       </div>
-      <div className='main__categories container'>
+      <div className='main__categories container hidemobile'>
         <div className='categories-title'>
           <img src={categoryicon} alt='categories' />
           <span> Tüm Kategoriler </span>

@@ -82,7 +82,7 @@
     .main {
         padding:15px 20px;
         margin-top: 0;
-        &__categories, &__title {
+        .hidemobile, &__title {
             display: none;
         }
         &__products {

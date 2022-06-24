@@ -15,7 +15,7 @@ const MobileNavbar = (props: any) => {
                 <img src={mainLogo} alt="logo" />
             </div>
             <div className='navbar-items'>
-                <Categories/>
+                <Categories setOpenStatus={setOpenStatus}/>
             </div>
             <div className='navbar-close'>
                 <button onClick={() => setOpenStatus(false)}> &times; </button>

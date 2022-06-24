@@ -42,16 +42,28 @@
 }
 
 // Responsives
-@media (max-width: 576px) {
+@media (max-width: 767.98px) {
     .categories {
-        display: none;
+        display: block;
+        &__title {
+            height: auto;
+            a {
+                justify-content: flex-start;
+                border: 0;
+                border-bottom: solid 1px #f2f2f2;
+                border-radius: 0;
+                font-size: 15px;
+                font-size: 15px;
+                padding: 15px 0;
+                &:hover {
+                    background-color: none;
+                    border-color    : #E2E7E9;
+                    color           : $white;
+                }
+            }
+        }
     }
-}
-
-@media (min-width: 576.98px) and (max-width: 767.98px) {
-    .categories {
-        display: none;
-    }
+    
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {

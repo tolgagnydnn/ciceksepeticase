@@ -8,7 +8,9 @@ import './style.scss'
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import { getAllProducts } from '../../Main/mainSlice';
 
-const Categories = () => {
+const Categories = (props:any | boolean) => {
+
+  const {setOpenStatus} = props
 
   const dispatch = useAppDispatch()
 
@@ -30,6 +32,7 @@ const Categories = () => {
       id:category.id,
       q: ''
     }))
+    setOpenStatus(false)
   }
 
   return (

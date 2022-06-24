@@ -31,14 +31,12 @@ const MobileHeader = (props: any) => {
           <img src={mainLogo} alt="mainLogo" />
         </div>
         <div className='header-basket'>
-          <img src={basket} alt="basket" />
-          <div className='basket-count'>
-            {store.basket.count > 0 &&
-              <div className='basket-count'>
-                <span>  {store.basket.count}  </span>
-              </div>
-            }
-          </div>
+          <img src={basket} alt="basket"/>
+          {store.basket.count > 0 &&
+            <div className='basket-count'>
+              <span>  {store.basket.count}  </span>
+            </div>
+          }
         </div>
       </div>
       <div className='mobilenavbar__search'>
