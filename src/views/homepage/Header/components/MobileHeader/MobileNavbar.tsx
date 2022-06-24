@@ -5,7 +5,7 @@ import './style.scss'
 import mainLogo from 'assets/images/logo.png'
 
 // Components
-import Categories from '../../../components/Categories/Categories'
+import Categories from 'components/Categories/Categories'
 
 const MobileNavbar = (props: any) => {
 

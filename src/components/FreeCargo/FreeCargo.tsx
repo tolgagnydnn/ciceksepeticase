@@ -1,5 +1,5 @@
 // React & Redux
-import { useAppSelector } from '../../../../store/hooks'
+import { useAppSelector } from 'store/hooks'
 
 // Images
 import lighticon from 'assets/images/lighticon.svg'

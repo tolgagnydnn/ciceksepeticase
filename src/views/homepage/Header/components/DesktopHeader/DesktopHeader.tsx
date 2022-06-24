@@ -7,7 +7,7 @@ import searchicon from 'assets/images/searchbutton.png'
 import basket from 'assets/images/basket.png'
 
 // Components
-import FreeCargo from '../../../components/FreeCargo/FreeCargo'
+import FreeCargo from 'components/FreeCargo/FreeCargo'
 
 const DesktopHeader = (props: any) => {
 

@@ -1,13 +1,15 @@
 // React & Redux
 import { useState, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
-import { getAllProducts } from '../../Main/mainSlice'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { getAllProducts } from 'views/homepage/Main/mainSlice'
 
 // Styles
 import './style.scss'
 
 // Hooks
-import useMediaQuery from '../../../../hooks/useMediaQuery'
+import useMediaQuery from 'hooks/useMediaQuery'
+
+
 
 const Categories = (props: any | boolean) => {
 

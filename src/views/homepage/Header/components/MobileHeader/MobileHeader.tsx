@@ -11,7 +11,7 @@ import menuicon from 'assets/images/categories.png'
 
 // Components
 import MobileNavbar from './MobileNavbar'
-import FreeCargo from '../../../components/FreeCargo/FreeCargo'
+import FreeCargo from 'components/FreeCargo/FreeCargo'
 
 const MobileHeader = (props: any) => {
 

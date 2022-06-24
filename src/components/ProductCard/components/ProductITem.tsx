@@ -1,7 +1,7 @@
 // React & Redux
 import { useState, useEffect } from "react"
-import { useAppDispatch } from "../../../../../store/hooks"
-import { addBasket, incrementBasketItem, decrementBasketItem } from "../../../Main/mainSlice"
+import { useAppDispatch } from "store/hooks"
+import { addBasket, incrementBasketItem, decrementBasketItem } from "views/homepage/Main/mainSlice"
 
 const ProductITem = (props: any) => {
 

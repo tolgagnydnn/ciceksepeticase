@@ -12,9 +12,9 @@ import gifticon from 'assets/images/gifticon.png'
 import stationaryicon from 'assets/images/stationaryicon.png'
 
 // Components
-import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
-import Categories from '../components/Categories/Categories'
-import ProductCard from '../components/ProductCard/ProductCard'
+import BreadCrumb from 'components/BreadCrumb/BreadCrumb'
+import Categories from 'components/Categories/Categories'
+import ProductCard from 'components/ProductCard/ProductCard'
 import DiscountCard from './components/DiscountCard'
 
 const Main = () => {
