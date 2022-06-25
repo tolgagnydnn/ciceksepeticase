@@ -1,9 +1,9 @@
 // React & Redux
-import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { getAllProducts } from '../Main/mainSlice'
 
 // Hooks
-import useMediaQuery from '../../../hooks/useMediaQuery'
+import useMediaQuery from 'hooks/useMediaQuery'
 
 // Components
 import MobileHeader from './components/MobileHeader/MobileHeader'
@@ -14,7 +14,7 @@ const Header = () => {
   const dispatch = useAppDispatch()
 
   // Global State
-  const store = useAppSelector(state => state.products)
+  const { params, basket: { count } } = useAppSelector(state => state.products)
 
   // Responsive Status
   const isMobile = useMediaQuery('(max-width: 767.98px)')
@@ -22,20 +22,20 @@ const Header = () => {
   // Search Products
   const searchProducts = (value: string) => {
     if (value.length > 2) {
-      dispatch(getAllProducts({ ...store.params, q: value }))
+      dispatch(getAllProducts({ ...params, q: value }))
     } else {
-      dispatch(getAllProducts({ ...store.params, q: '' }))
+      dispatch(getAllProducts({ ...params, q: '' }))
     }
   }
 
   return (
     isMobile
       ? <MobileHeader
-        store={store}
+        count={count}
         searchProducts={searchProducts}
       />
       : <DesktopHeader
-        store={store}
+        count={count}
         searchProducts={searchProducts}
       />
   )

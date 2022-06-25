@@ -1,7 +1,11 @@
 // Styles
 import './style.scss'
 
-const ProgressBar = (props: any) => {
+interface ProgressBarInterface {
+    percent: number
+}
+
+const ProgressBar = (props: ProgressBarInterface) => {
     // Props
     const { percent } = props
 

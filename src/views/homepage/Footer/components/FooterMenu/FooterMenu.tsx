@@ -2,20 +2,20 @@
 import './style.scss'
 
 // Data
-import footerMenuData from './footerMenuData'
+import footerMenuData, { FooterMenuInterface, Menu } from './footerMenuData'
 
 const FooterMenu = () => {
   return (
     <div className='footermenu'>
-      {footerMenuData.map((menuitem: any) => (
-        <div className='footermenu__menubox'>
+      {footerMenuData.map((menuitem:FooterMenuInterface) => (
+        <div className='footermenu__menubox' key={menuitem.id}>
           <div className='menubox-title'>
             <p> {menuitem.title} </p>
           </div>
           <div className='menubox-menu'>
             <ul>
-              {menuitem.menu.map((item: any) => (
-                <li>
+              {menuitem.menu.map((item: Menu) => (
+                <li key={item.id}>
                   <a href='!#'> {item.title} </a>
                 </li>
               ))}

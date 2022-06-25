@@ -17,13 +17,16 @@ import Categories from 'components/Categories/Categories'
 import ProductCard from 'components/ProductCard/ProductCard'
 import DiscountCard from './components/DiscountCard'
 
+// Models
+import { CategoriesInterface } from 'models/ProductModel'
+
 const Main = () => {
 
   // GLobal State
-  const { params, allCategories } = useAppSelector((state: any) => state.products)
+  const { params, allCategories } = useAppSelector((state:any) => state.products)
 
   // Filter CategoryName
-  const categoryName = allCategories.filter((categoryname: any) => categoryname.id === params.id)
+  const categoryName  = allCategories.filter((categoryname: CategoriesInterface) => categoryname.id === params.id)
 
   return (
     <div className='main'>
@@ -38,7 +41,7 @@ const Main = () => {
       <div className='main__categories container hidemobile'>
         <div className='categories-title'>
           <img src={categoryicon} alt='categories' />
-          <span> Tüm Kategoriler </span>
+          <span> Kategoriler </span>
         </div>
         <div className='main__categoriesbox'>
           <Categories />

@@ -7,7 +7,13 @@ import mainLogo from 'assets/images/logo.png'
 // Components
 import Categories from 'components/Categories/Categories'
 
-const MobileNavbar = (props: any) => {
+//Type
+interface MobileNavbarInterface {
+    openStatus: Boolean
+    setOpenStatus: (val:Boolean) => void
+}
+
+const MobileNavbar = (props:MobileNavbarInterface) => {
 
     const { openStatus, setOpenStatus } = props
 

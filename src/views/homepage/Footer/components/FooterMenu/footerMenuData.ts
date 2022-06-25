@@ -1,4 +1,14 @@
-const footerMenuData = [
+export interface Menu {
+    id:number
+    title:string
+}
+export interface FooterMenuInterface {
+    id: number,
+    title: string,
+    menu: Menu[]
+} 
+
+const footerMenuData= [
     {
         id: 1,
         title: "Faydalı Bilgiler",

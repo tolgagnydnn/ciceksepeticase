@@ -4,15 +4,21 @@ import './style.scss'
 // İmages & Icon
 import mainLogo from 'assets/images/logo.png'
 import searchicon from 'assets/images/searchbutton.png'
-import basket from 'assets/images/basket.png'
+import basketIcon from 'assets/images/basket.png'
 
 // Components
 import FreeCargo from 'components/FreeCargo/FreeCargo'
 
-const DesktopHeader = (props: any) => {
+//Type
+interface DesktopHeaderInterface {
+    count: number
+    searchProducts: (val: string) => void
+}
+
+const DesktopHeader = (props: DesktopHeaderInterface) => {
 
     // Global State
-    const { store, searchProducts } = props
+    const { count, searchProducts } = props
 
     return (
         <div className='header container'>
@@ -27,7 +33,7 @@ const DesktopHeader = (props: any) => {
                         name="arama"
                         className="search-input"
                         placeholder="Ürün Ara"
-                        onChange={(e) => searchProducts(e.target.value)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => searchProducts(e.target.value)}
                     />
                     <button className="search-btn">
                         Ara
@@ -36,11 +42,11 @@ const DesktopHeader = (props: any) => {
             </div>
             <div className='header__basket'>
                 <div className='basket-content'>
-                    <img src={basket} alt="basket" />
+                    <img src={basketIcon} alt="basket" />
                     <span className='basket-title'> Sepetim </span>
-                    {store.basket.count > 0 &&
+                    {count > 0 &&
                         <div className='basket-count'>
-                            <span>  {store.basket.count}  </span>
+                            <span>  {count}  </span>
                         </div>
                     }
                 </div>

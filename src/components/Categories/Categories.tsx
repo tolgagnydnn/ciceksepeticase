@@ -9,12 +9,17 @@ import './style.scss'
 // Hooks
 import useMediaQuery from 'hooks/useMediaQuery'
 
+// Models
+import { CategoriesInterface } from 'models/ProductModel';
 
+// interface CategoriesPageInterface {
+//   setOpenStatus: (val:Boolean) => void
+// }
 
-const Categories = (props: any | boolean) => {
+const Categories = (props:any) => {
 
   // Props
-  const { setOpenStatus } = props
+  const { setOpenStatus }= props
 
   const dispatch = useAppDispatch()
 
@@ -25,7 +30,7 @@ const Categories = (props: any | boolean) => {
   const { allCategories, categoryLoading } = useAppSelector(state => state.products)
 
   // Local State
-  const [activeCategory, setActiveCategory] = useState<any>();
+  const [activeCategory, setActiveCategory] = useState<CategoriesInterface>();
 
   useEffect(() => {
     if (categoryLoading === false) {
@@ -33,7 +38,7 @@ const Categories = (props: any | boolean) => {
     }
   }, [allCategories, categoryLoading])
 
-  const handleActiveCategory = (category: any) => {
+  const handleActiveCategory = (category: CategoriesInterface) => {
     setActiveCategory(category)
     dispatch(getAllProducts({
       id: category.id,
@@ -47,11 +52,11 @@ const Categories = (props: any | boolean) => {
   return (
     <div className='categories'>
       {
-        allCategories?.map((category: any) => (
+        allCategories?.map((category: CategoriesInterface) => (
           <div key={category.id} className='categories__title'>
             <button
               className={activeCategory?.id === category.id ? "active" : ""}
-              onClick={(): any => handleActiveCategory(category)}
+              onClick={() => handleActiveCategory(category)}
             >
               <span> {category?.title} </span>
             </button>

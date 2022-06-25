@@ -13,10 +13,16 @@ import menuicon from 'assets/images/categories.png'
 import MobileNavbar from './MobileNavbar'
 import FreeCargo from 'components/FreeCargo/FreeCargo'
 
-const MobileHeader = (props: any) => {
+//Type
+interface MobileHeaderInterface {
+  count: number
+  searchProducts: (val: string) => void
+}
 
-  const { store, searchProducts } = props
-  const [openStatus, setOpenStatus] = useState(false)
+const MobileHeader = (props: MobileHeaderInterface) => {
+
+  const { count, searchProducts } = props
+  const [openStatus, setOpenStatus] = useState<Boolean>(false)
 
   return (
     <div className='mobilenavbar'>
@@ -32,9 +38,9 @@ const MobileHeader = (props: any) => {
         </div>
         <div className='header-basket'>
           <img src={basket} alt="basket" />
-          {store.basket.count > 0 &&
+          {count > 0 &&
             <div className='basket-count'>
-              <span>  {store.basket.count}  </span>
+              <span>  {count}  </span>
             </div>
           }
         </div>
@@ -57,7 +63,10 @@ const MobileHeader = (props: any) => {
         {openStatus &&
           <div className='navbar-backdrop' onClick={() => setOpenStatus(false)}></div>
         }
-        <MobileNavbar openStatus={openStatus} setOpenStatus={setOpenStatus} />
+        <MobileNavbar
+          openStatus={openStatus}
+          setOpenStatus={setOpenStatus}
+        />
       </div>
     </div>
   )

@@ -1,7 +1,16 @@
 // Styles
 import './style.scss'
 
-const DiscountCard = (props: any) => {
+// Type
+interface DiscountCardInterface {
+    image: string
+    title:string
+    buttonTitle:string
+    color:string
+}
+
+const DiscountCard = (props: DiscountCardInterface) => {
+
     //Props
     const { image, title, buttonTitle, color } = props
 
