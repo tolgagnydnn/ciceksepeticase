@@ -4,12 +4,11 @@ import { useAppDispatch } from "store/hooks"
 import { addBasket, incrementBasketItem, decrementBasketItem } from "views/homepage/Main/mainSlice"
 
 // Models
-import { ProductInterface } from "models/ProductModel"
-
+import { BasketProductInterface, ProductInterface } from "models/ProductModel"
 
 interface ProductItemInterface {
     product: ProductInterface
-    basketProducts: ProductInterface[]
+    basketProducts: BasketProductInterface[]
 }
 
 const ProductITem = (props:ProductItemInterface) => {
@@ -20,10 +19,10 @@ const ProductITem = (props:ProductItemInterface) => {
     const dispatch = useAppDispatch()
 
     // Local State
-    const [orderedBasketObject, setOrderedBasketObject] = useState<ProductInterface>()
+    const [orderedBasketObject, setOrderedBasketObject] = useState<BasketProductInterface>()
 
     useEffect(() => {
-        const object = basketProducts.find((productEl: ProductInterface) => productEl.id === product.id)
+        const object = basketProducts.find((productEl: BasketProductInterface) => productEl.id === product.id)
         setOrderedBasketObject(object)
     }, [basketProducts, product])
 

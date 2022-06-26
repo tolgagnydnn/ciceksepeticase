@@ -1,5 +1,6 @@
 // React & Redux
 import { useAppSelector } from 'store/hooks'
+import { memo } from 'react'
 
 // Styles
 import './style.scss'
@@ -9,6 +10,7 @@ import ProductITem from './components/ProductITem'
 
 // Models
 import { ProductInterface } from 'models/ProductModel'
+
 
 const ProductCard = () => {
 
@@ -33,4 +35,4 @@ const ProductCard = () => {
   )
 }
 
-export default ProductCard
+export default memo(ProductCard);

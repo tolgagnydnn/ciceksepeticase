@@ -12,10 +12,6 @@ import useMediaQuery from 'hooks/useMediaQuery'
 // Models
 import { CategoriesInterface } from 'models/ProductModel';
 
-// interface CategoriesPageInterface {
-//   setOpenStatus: (val:Boolean) => void
-// }
-
 const Categories = (props:any) => {
 
   // Props

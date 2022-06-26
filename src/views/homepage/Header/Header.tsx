@@ -8,6 +8,7 @@ import useMediaQuery from 'hooks/useMediaQuery'
 // Components
 import MobileHeader from './components/MobileHeader/MobileHeader'
 import DesktopHeader from './components/DesktopHeader/DesktopHeader'
+import { useCallback } from 'react'
 
 const Header = () => {
 
@@ -19,14 +20,16 @@ const Header = () => {
   // Responsive Status
   const isMobile = useMediaQuery('(max-width: 767.98px)')
 
-  // Search Products
-  const searchProducts = (value: string) => {
-    if (value.length > 2) {
-      dispatch(getAllProducts({ ...params, q: value }))
-    } else {
-      dispatch(getAllProducts({ ...params, q: '' }))
-    }
-  }
+  const searchProducts = useCallback(
+    (value: string) => {
+        if (value.length > 2) {
+          dispatch(getAllProducts({ ...params, q: value }))
+        } else {
+          dispatch(getAllProducts({ ...params, q: "" }))
+        }
+    },
+    [dispatch, params],
+  )
 
   return (
     isMobile

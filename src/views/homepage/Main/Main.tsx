@@ -26,7 +26,7 @@ const Main = () => {
   const { params, allCategories } = useAppSelector((state:any) => state.products)
 
   // Filter CategoryName
-  const categoryName  = allCategories.filter((categoryname: CategoriesInterface) => categoryname.id === params.id)
+  const categoryName  = allCategories.filter((categoryname: CategoriesInterface) => categoryname.id === params?.id)
 
   return (
     <div className='main'>

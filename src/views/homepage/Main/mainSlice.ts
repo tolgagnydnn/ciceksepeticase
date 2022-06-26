@@ -1,7 +1,7 @@
 
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { ProductInterface, CategoriesInterface } from 'models/ProductModel'
+import { ProductInterface, InitialInterface } from 'models/ProductModel'
 
 export const getAllCategories = createAsyncThunk('categories/getAllCategories', async () => {
   const response = await axios.get('/api/categories/all-categories')
@@ -13,19 +13,6 @@ export const getAllProducts = createAsyncThunk('products/categoryGetProducts', a
   return { params, data: response.data }
 })
 
-export interface InitialInterface {
-  params: object,
-  allProducts: ProductInterface[]
-  allCategories: CategoriesInterface[]
-  totalProducts: number
-  basket: {
-    products: ProductInterface[]
-    count: number,
-    totalPrice: number
-  },
-  categoryLoading: null  | boolean
-  productLoading: null  | boolean
-}
 
 const initialState: InitialInterface = {
     params: {},
@@ -61,7 +48,7 @@ export const productSlice = createSlice({
       });
       state.basket.totalPrice = totalPrice
     },
-    addBasket: (state:InitialInterface, action:PayloadAction<any>) => {
+    addBasket: (state:InitialInterface, action:PayloadAction<ProductInterface>) => {
       const orderObj = {...action.payload, orderCount: 1}
       const isExists: boolean = state.basket.products.findIndex((el) => el.id === action.payload.id) > -1
       if (!isExists) {
@@ -70,7 +57,7 @@ export const productSlice = createSlice({
       productSlice.caseReducers.calculateCount(state)
       productSlice.caseReducers.calculatePrice(state)
     },
-    incrementBasketItem: (state:InitialInterface, action:PayloadAction<any>) => {
+    incrementBasketItem: (state:InitialInterface, action:PayloadAction<ProductInterface>) => {
       const index: number = state.basket.products.findIndex((el) => el.id === action.payload.id)
       if(index > -1) {
         state.basket.products[index].orderCount += 1
@@ -78,7 +65,7 @@ export const productSlice = createSlice({
       productSlice.caseReducers.calculateCount(state)
       productSlice.caseReducers.calculatePrice(state)
     },
-    decrementBasketItem: (state:InitialInterface, action:PayloadAction<any>) => {
+    decrementBasketItem: (state:InitialInterface, action:PayloadAction<ProductInterface>) => {
       const index: number = state.basket.products.findIndex((el) => el.id === action.payload.id)
       if(index > -1) {
         if (state.basket.products[index].orderCount > 1) {

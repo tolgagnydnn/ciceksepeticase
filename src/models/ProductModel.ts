@@ -5,7 +5,6 @@ export interface ProductInterface {
     name: string
     freeCargo: boolean
     price: number
-    orderCount: number
 }
 
 export interface CategoriesInterface {
@@ -13,11 +12,26 @@ export interface CategoriesInterface {
     title: string
 }
 
-// export interface BasketInterface {
-//     products: ProductInterface[]
-//     count: number
-//     totalPrice: number
-//     categoryLoading: null
-//     productLoading: null
-// }
+export interface BasketProductInterface extends ProductInterface {
+    orderCount: number
+}
+
+export interface BasketInterface {
+    products: BasketProductInterface[]
+    count: number
+    totalPrice: number
+}
+
+export interface InitialInterface {
+    params: object
+    allProducts: ProductInterface[]
+    allCategories: CategoriesInterface[]
+    totalProducts: number
+    basket: BasketInterface
+    categoryLoading: null | boolean
+    productLoading: null | boolean
+}
+export interface StateInterface {
+    products: InitialInterface
+}
 
